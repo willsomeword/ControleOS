@@ -1,0 +1,293 @@
+function CarregarMeusDados() {
+
+    var id_user_logado = 6;
+    var endpoint_cliente = "DetalharMeusDados";
+
+    var dados = {
+        endpoint: endpoint_cliente,
+        id_user: id_user_logado
+
+    }
+
+    $.ajax({
+        type: "POST",
+        url: BASE_URL_AJAX("funcionario_api"),
+        data: JSON.stringify(dados),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        success: function (dados_ret) {
+            var resultado = dados_ret["result"];
+
+            $("#nome").val(resultado.nome);
+            $("#email").val(resultado.login);
+            $("#telefone").val(resultado.telefone);
+            $("#cep").val(resultado.cep);
+            $("#id_end").val(resultado.id_end);
+            $("#rua").val(resultado.rua);
+            $("#bairro").val(resultado.bairro);
+            $("#estado").val(resultado.sigla_estado);
+            $("#cidade").val(resultado.cidade);
+        }
+    })
+
+}
+
+function AlterarMeusDados(id_form) {
+    if (NotificarCampoObg(id_form)) {
+        var id_user = 6;
+        var id_setor_func = 19;
+        var dados = {
+            id_user: id_user,
+            endpoint: "AlterarMeusDados",
+            nome: $("#nome").val().trim(),
+            login: $("#email").val().trim(),
+            telefone: $("#telefone").val().trim(),
+            id_end: $("#id_end").val().trim(),
+            rua: $("#rua").val().trim(),
+            bairro: $("#bairro").val().trim(),
+            cep: $("#cep").val().trim(),
+            sigla_est: $("#estado").val().trim(),
+            cidade: $("#cidade").val().trim(),
+            id_setor: id_setor_func
+        }
+        $.ajax({
+            type: "POST",
+            url: BASE_URL_AJAX("funcionario_api"),
+            data: JSON.stringify(dados),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function (dados_ret) {
+                var resultado = dados_ret["result"];
+
+            }
+        })
+
+    }
+    return false;
+}
+
+function CarregarEquipamentosAlocados(){
+    var id_setor_func = 20;
+    var combo_equipamento = $("#equipamento");
+    combo_equipamento.empty();
+    var dados = {
+        endpoint: 'SelecionarEquipamentosAlocados',
+        id_setor: id_setor_func
+    }
+    $.ajax({
+        type: "POST",
+        url: BASE_URL_AJAX("funcionario_api"),
+        data: JSON.stringify(dados),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        success: function (dados_ret){
+            //console.log(dados_ret);
+            var resultado = dados_ret['result'];
+
+            $('<option>').val("").text("Selecione").appendTo(combo_equipamento);
+
+            $(resultado).each(function () {
+                $('<option>').val(this.id).text(this.nome_tipo + " / " + this.nome_modelo + " / " + this.identificacao).appendTo(combo_equipamento);
+
+            })
+        }
+    })
+
+}
+
+function AbrirChamado(id_form) {
+
+    if (NotificarCampoObg(id_form)) {
+        var dadosAPI = GetTnkValue();
+        var id_user_logado = dadosAPI.id_user_func;
+        //var id_user_func = 8;
+        var dados = {
+            endpoint: "AbrirChamado",
+            id_user: id_user_logado,
+            problema: $("#descricao").val().trim(), 
+            id_alocar: $("#equipamento").val()
+        }
+        $.ajax({
+            type: "POST",
+            url: BASE_URL_AJAX("funcionario_api"),
+            data: JSON.stringify(dados),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function (dados_ret) {
+                console.log(dados_ret);
+                var resultado = dados_ret["result"];
+                if (resultado == '1') {
+                    alert('Ok');
+                    CarregarEquipamentosAlocados();
+                    LimparCampos(id_form);
+                }
+            }
+        })
+
+    }
+
+    //return false;
+}
+
+function FiltrarChamados() {
+var dadosAPI = GetTnkValue();
+    var dados = {
+        situacao: $("#situacao").val(),
+        endpoint: 'FiltrarChamado'
+    };
+    $.ajax({
+        type: "POST",
+        url: 'http://localhost/ControleOS/src/Resource/api/funcionario_api.php',
+        data: JSON.stringify(dados),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        success: function (dados_ret) {
+            var chamados = dados_ret["result"];
+            console.log(dados_ret);
+
+            if (chamados != "") {
+                var table_start = '';
+                var table_end = '';
+                var table_data = '';
+                var table_head = '';
+
+                table_start = '<table class="table table-hover" id="tableResult"><thead>';
+                table_head += '<tr><th>Data Abertura</th><th>Funcionário</th>';
+                table_head += '<th>Equipamento</th><th>Problema</th><th>Data Atendimento</th>';
+                table_head += '<th>Técnico</th><th>Data Encerramento</th><th>Laudo</th></tr></thead><tbody>';
+
+                $(chamados).each(function () {
+
+                    table_data += '<tr>';
+                    table_data += '<td>' + this.data_abertura + '</td>';
+                    table_data += '<td>' + this.nome_funcionario + '</td>';
+                    table_data += '<td>' + this.identificacao + ' / ' + "Modelo: " + this.nome_modelo + ' / ' + this.nome_tipo + '</td>';
+                    table_data += '<td>' + this.descricao_problema + '</td>';
+                    table_data += '<td>' + (this.data_atendimento == null ? '-' : this.data_atendimento) + '</td>';
+                    table_data += '<td>' + (this.nome_tecnico == null ? '-' : this.nome_tecnico) + '</td>';
+                    table_data += '<td>' + (this.data_encerramento == null ? '-' : this.data_encerramento) + '</td>';
+                    table_data += '<td>' + (this.laudo_tecnico == null ? '-' : this.laudo_tecnico) + '</td>';
+                    table_data += '</tr>';
+
+                })
+
+                table_end = '</tbody></table>';
+
+                var vaso = table_start + table_head + table_data + table_end;
+
+                $("#tableResult").html(vaso);
+                $("#divResult").show();
+            } else {
+                MensagemGenerica("Não foi encontrado nenhum chamado");
+                $("#divResult").hide();
+            }
+        }
+    })
+
+    return false;
+}
+
+function VerificarSenhaAtual(id_form) {
+    if (NotificarCampoObg(id_form)) {
+        var dados = {
+            endpoint: "VerificarSenhaAtual",
+            senha: $("#senha").val().trim(),
+            id: 6 //Fixo por enquanto
+        }
+        $.ajax({
+            type: "POST",
+            url: 'http://localhost/ControleOS/src/Resource/api/funcionario_api.php',
+            data: JSON.stringify(dados),
+            headers: {
+                'Authorization': 'Bearer ' + GetTnk(),
+                'Content-Type': 'application/json'
+            },
+            success: function (resultado) {
+                var ret = resultado["result"];
+
+                if (ret == -1) {
+                    MensagemGenerica("Senha Atual não confere");
+                } else if (ret == 1) {
+                    $("#divSenhaAtual").hide();
+                    $("#divMudarSenha").show();
+                } else if(ret == -1000){
+                    ClearTnk();
+                    RedirectToPage("login");
+                }
+            }
+        })
+
+    }
+    return false;
+}
+
+function AtualizarSenha(id_form) {
+    if (NotificarCampoObg(id_form)) {
+        var dados = {
+            endpoint: "AtualizarSenha",
+            senha: $("#senhanova").val().trim(),
+            repetir_senha: $("#senhanova2").val().trim(),
+            id: 6 //Fixo por enquanto
+        }
+        $.ajax({
+            type: "POST",
+            url: 'http://localhost/ControleOS/src/Resource/api/funcionario_api.php',
+            data: JSON.stringify(dados),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function (resultado) {
+                var ret = resultado["result"];
+
+                if (ret == -1) {
+                    MensagemErro();
+                }
+                if (ret == -2) {
+                    MensagemGenerica("A senha deverá conter no mínimo 6 caracteres");
+                } else if (ret == -3) {
+                    MensagemGenerica("O campo SENHA e REPETIR SENHA não conferem");
+                } else if (ret == 1) {
+                    MensagemSucesso();
+                }
+            }
+        })
+
+    }
+    return false;
+}
+function ValidarAcesso(id_form) {
+    if(NotificarCampoObg(id_form)){
+
+        var dados = {
+            login: $("#login").val(),
+            senha: $("#senha").val(),
+            endpoint: 'Autenticar'
+        }
+        $.ajax({
+            type: "POST",
+            url: 'http://localhost/ControleOS/src/Resource/api/funcionario_api.php',
+            data: JSON.stringify(dados),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function (resultado) {
+                console.log(resultado)
+                var dados = resultado['result'];
+            
+                //if(dados == -3){
+                    //MensagemGenerica("Usuário não autorizado")
+                //} else{
+                  //  AddTnk(dados);
+                   // location = "chamados.php";
+                //}
+            }
+        })
+        
+    }
+    return false;
+}

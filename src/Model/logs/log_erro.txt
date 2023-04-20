@@ -1,0 +1,294 @@
+-------------------------------------
+DATA: 2023-03-01
+HORA: 22:56:54
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'telefone' in 'field list'
+-------------------------------------
+DATA: 2023-03-01
+HORA: 23:02:43
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_os_sab13h.tb_endereco' doesn't exist
+-------------------------------------
+DATA: 2023-03-01
+HORA: 23:06:55
+Funcao: CadastroUsuario
+Cod. logado: 30
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-01
+HORA: 23:09:46
+Funcao: CadastroUsuario
+Cod. logado: 30
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-01
+HORA: 23:11:14
+Funcao: CadastroUsuario
+Cod. logado: 30
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-01
+HORA: 23:11:33
+Funcao: CadastroUsuario
+Cod. logado: 30
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-01
+HORA: 23:12:27
+Funcao: CadastroUsuario
+Cod. logado: 0
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-01
+HORA: 23:17:39
+Funcao: CadastroUsuario
+Cod. logado: 0
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-02
+HORA: 20:17:36
+Funcao: CadastroUsuario
+Cod. logado: 0
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-05
+HORA: 21:09:13
+Funcao: AlterarEquipamento
+Cod. logado: 32
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tipoequip' in 'field list'
+-------------------------------------
+DATA: 2023-03-05
+HORA: 21:13:26
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-03-05
+HORA: 21:14:17
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-05
+HORA: 21:18:59
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-03-05
+HORA: 21:19:52
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[HY000]: General error: 1364 Field 'telefone' doesn't have a default value
+-------------------------------------
+DATA: 2023-03-05
+HORA: 21:24:13
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-05
+HORA: 21:29:37
+Funcao: CadastroUsuario
+Cod. logado: 0
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-05
+HORA: 21:44:14
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-05
+HORA: 21:50:11
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-06
+HORA: 00:43:48
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-06
+HORA: 00:47:27
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-06
+HORA: 01:05:16
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'usuario_id' in 'field list'
+-------------------------------------
+DATA: 2023-03-06
+HORA: 19:38:54
+Funcao: CadastroUsuario
+Cod. logado: 32
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-03-06
+HORA: 20:04:41
+Funcao: CadastroUsuario
+Cod. logado: 0
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-03-06
+HORA: 20:11:33
+Funcao: AlterarTipoEquipamento
+Cod. logado: 32
+Erro: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'senha' cannot be null
+-------------------------------------
+DATA: 2023-03-06
+HORA: 20:11:37
+Funcao: AlterarTipoEquipamento
+Cod. logado: 32
+Erro: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'senha' cannot be null
+-------------------------------------
+DATA: 2023-03-06
+HORA: 20:11:58
+Funcao: AlterarTipoEquipamento
+Cod. logado: 32
+Erro: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'senha' cannot be null
+-------------------------------------
+DATA: 2023-03-06
+HORA: 20:11:58
+Funcao: AlterarTipoEquipamento
+Cod. logado: 32
+Erro: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'senha' cannot be null
+-------------------------------------
+DATA: 2023-03-06
+HORA: 20:11:58
+Funcao: AlterarTipoEquipamento
+Cod. logado: 32
+Erro: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'senha' cannot be null
+-------------------------------------
+DATA: 2023-04-02
+HORA: 19:14:43
+Funcao: AlocarEquipamento
+Cod. logado: 56
+Erro: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'selected' for column 'equipamento_id' at row 1
+-------------------------------------
+DATA: 2023-04-02
+HORA: 19:16:46
+Funcao: AlterarTipoEquipamento
+Cod. logado: 56
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nome' in 'field list'
+-------------------------------------
+DATA: 2023-04-02
+HORA: 19:17:14
+Funcao: CadastrarTipoEquipamento
+Cod. logado: 56
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nome' in 'field list'
+-------------------------------------
+DATA: 2023-04-02
+HORA: 19:17:32
+Funcao: CadastrarTipoEquipamento
+Cod. logado: 56
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nome' in 'field list'
+-------------------------------------
+DATA: 2023-04-05
+HORA: 06:53:19
+Funcao: CadastroUsuario
+Cod. logado: 56
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-04-05
+HORA: 06:56:57
+Funcao: CadastroUsuario
+Cod. logado: 56
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-04-05
+HORA: 06:57:40
+Funcao: CadastroUsuario
+Cod. logado: 56
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-04-07
+HORA: 16:06:56
+Funcao: CadastroUsuario
+Cod. logado: 55
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-04-07
+HORA: 16:07:52
+Funcao: CadastroUsuario
+Cod. logado: 55
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-04-07
+HORA: 16:26:21
+Funcao: CadastroUsuario
+Cod. logado: 55
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-04-07
+HORA: 16:31:09
+Funcao: CadastroUsuario
+Cod. logado: 55
+Erro: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+-------------------------------------
+DATA: 2023-04-16
+HORA: 01:14:09
+Funcao: AbrirChamado
+Cod. logado: 95
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tb_alocar_id' in 'field list'
+-------------------------------------
+DATA: 2023-04-16
+HORA: 01:14:58
+Funcao: AbrirChamado
+Cod. logado: 95
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tb_alocar_id' in 'field list'
+-------------------------------------
+DATA: 2023-04-16
+HORA: 01:16:32
+Funcao: AbrirChamado
+Cod. logado: 95
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tb_alocar_id' in 'field list'
+-------------------------------------
+DATA: 2023-04-16
+HORA: 01:20:12
+Funcao: AbrirChamado
+Cod. logado: 95
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tb_alocar_id' in 'field list'
+-------------------------------------
+DATA: 2023-04-16
+HORA: 01:23:24
+Funcao: AbrirChamado
+Cod. logado: 95
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tb_alocar_id' in 'field list'
+-------------------------------------
+DATA: 2023-04-16
+HORA: 01:24:22
+Funcao: AbrirChamado
+Cod. logado: 76
+Erro: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tb_alocar_id' in 'field list'
+-------------------------------------
+DATA: 2023-04-16
+HORA: 21:34:18
+Funcao: MudarSenha
+Cod. logado: 55
+Erro: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: '$2y$10$TSn.fEj4guuTvvRtwGR41u7z9SgOkPYSQzEv/lIpsG/vB8KpOUdDi'
+-------------------------------------
+DATA: 2023-04-16
+HORA: 21:34:27
+Funcao: MudarSenha
+Cod. logado: 55
+Erro: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: '$2y$10$TSn.fEj4guuTvvRtwGR41u7z9SgOkPYSQzEv/lIpsG/vB8KpOUdDi'
+-------------------------------------
+DATA: 2023-04-16
+HORA: 21:38:53
+Funcao: MudarSenha
+Cod. logado: 55
+Erro: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: '$2y$10$TSn.fEj4guuTvvRtwGR41u7z9SgOkPYSQzEv/lIpsG/vB8KpOUdDi'
+-------------------------------------
+DATA: 2023-04-16
+HORA: 21:39:08
+Funcao: MudarSenha
+Cod. logado: 55
+Erro: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: '$2y$10$TSn.fEj4guuTvvRtwGR41u7z9SgOkPYSQzEv/lIpsG/vB8KpOUdDi'
